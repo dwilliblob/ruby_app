@@ -8,9 +8,11 @@
 ├── README.md
 ├── rakefile.rb
 ├── src
-│   └── [class].rb
+│   └── Loader.rb
+│   └── WebLog.rb
 ├── test
-│   └── [class]_test.rb
+│   └── loader_test.rb
+│   └── web_log_test.rb
 └── test_helper.rb
 ```
 
