@@ -16,6 +16,7 @@
 └── test_helper.rb
 ```
 
+* `app.rb` - Script file to execute the program outputting results to console
 * `Gemfile` - Gemfile for project.
 * `README.md` - this file.
 * `rakefile.rb` - rake task to run test suite.
@@ -41,8 +42,8 @@ $ rake test
 $ open coverage/index.html
 ```
 
-## Run the load_webserver_log_reports function from the console to view results
+## Run the console command below to execute the program and view its output
 
 ```
-$ ruby -r "./src/loader.rb" -e "Loader.new.load_webserver_log_reports" webserver.log
+$ ruby app.rb "webserver.log"
 ```
