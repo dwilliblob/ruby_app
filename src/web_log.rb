@@ -10,5 +10,8 @@ class WebLog
     result = Hash[ log_array_objects.group_by{ |log_array_objects| log_array_objects.url }.map{ |k,v| [k,v.size] } ]
   end
 
-  
+  def sort_desc(result)
+    result.sort_by{ |_key, value| value }.reverse
+  end
+
 end
