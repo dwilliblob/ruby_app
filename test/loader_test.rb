@@ -18,4 +18,5 @@ class LoaderTest < Minitest::Test
     assert_equal '/help_page/1', array_objects.first.url
     assert_equal '126.318.035.038', array_objects.first.ip_address
   end
+  
 end

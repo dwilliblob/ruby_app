@@ -6,4 +6,9 @@ class WebLog
     @ip_address = ip_address
   end
 
+  def most_page_views(log_array_objects)
+    result = Hash[ log_array_objects.group_by{ |log_array_objects| log_array_objects.url }.map{ |k,v| [k,v.size] } ]
+  end
+
+  
 end

@@ -5,7 +5,13 @@ require_relative "../src/web_log"
 
 class WebLogTest < Minitest::Test
   def setup
+    web_log_row_1_url = '/test_page1/1'
+    web_log_row_1_ip_address = '111.111.111.111'
+    web_log_row_2_url = '/test_page2/2'
+    web_log_row_2_ip_address = '222.222.222.222'
     @web_log = WebLog.new
+    @web_log_1 = WebLog.new(web_log_row_1_url, web_log_row_1_ip_address)
+    @web_log_2 = WebLog.new(web_log_row_2_url, web_log_row_2_ip_address)
   end
 
   def test_constructor_happy_path
@@ -24,6 +30,14 @@ class WebLogTest < Minitest::Test
     assert_equal '123.456.789.012', @web_log.ip_address
   end
 
+  def test_most_page_views
+    web_log_object_array = []
+    web_log_object_array << @web_log_1
+    web_log_object_array << @web_log_2
+    result = Hash.new
+    result = {"/test_page1/1"=>1, "/test_page2/2"=>1}
+    assert_equal result, WebLog.new.most_page_views(web_log_object_array)
+  end
   # def test_reading_file
   #   row = '/help_page/1 126.318.035.038'
   #   first_row = @web_log.parse_webserver_log.first
